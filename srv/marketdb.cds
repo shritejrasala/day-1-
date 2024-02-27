@@ -507,32 +507,6 @@ annotate MarketDB.Purchase.Unique_BPNUM with @(
         },
     ],  
 );
-/*annotate MarketDB.Purchase.Unique_Price with @(
-    UI.LineItem:[
-        {
-            Label: 'Bussiness Partner',
-            Value: price_ID
-        },
-       
-    ],
-
-     UI.FieldGroup #PurchasePrice : {
-        $Type : 'UI.FieldGroupType',
-        Data : [
-            {
-                Value : price_ID,
-            }
-        ],
-    },
-    UI.Facets : [
-        {
-            $Type : 'UI.ReferenceFacet',
-            ID : 'PurchasePriceFacet',
-            Label : 'Unique_Price',
-            Target : '@UI.FieldGroup#PurchasePrice',
-        },
-    ],  
-);*/
 annotate MarketDB.Purchase.Unique_PID with @(
     UI.LineItem:[
         {
@@ -717,50 +691,6 @@ annotate MarketDB.Unique_BPNUM with @(
         
     ],    
 );
-/*annotate MarketDB.Unique_Price with @(
-    UI.LineItem: [
-        {
-            $Type : 'UI.DataField',
-            
-            Value : code
-        },
-        {
-            $Type : 'UI.DataField',
-            
-            Value : description
-        }
-    ],  
-);
-annotate MarketDB.Unique_Price with @(       
-    UI.FieldGroup #Unique_PriceInformation : {
-        $Type : 'UI.FieldGroupType',
-        Data : [
-            {
-            $Type : 'UI.DataField',
-            
-            Value : code
-        },
-        {
-            $Type : 'UI.DataField',
-            
-            Value : description
-        }
-        ],
-    },
-
-
-    UI.Facets : [
-        {
-            $Type : 'UI.ReferenceFacet',
-            ID : 'Unique_PriceInfoFacet',
-            Label : 'Unique_Price Information',
-            Target : '@UI.FieldGroup#Unique_PriceInformation',
-        },
-        
-        
-        
-    ],    
-);*/
 annotate MarketDB.Unique_PID with @(
     UI.LineItem: [
         {
@@ -921,32 +851,6 @@ annotate MarketDB.Purchase.Unique_BPNUM with {
         }
     )
 };
-/*annotate MarketDB.Purchase.Unique_Price with {
-    price @(
-        Common.Text: price.description,
-        Common.TextArrangement: #TextOnly,
-        //Common.ValueListWithFixedValues: true,
-        Common.ValueList : {
-            Label: 'Product Price',
-            CollectionPath : 'Unique_Price',
-            Parameters: [
-                {
-                    $Type             : 'Common.ValueListParameterInOut',
-                    LocalDataProperty : price_ID,
-                    ValueListProperty : 'ID'
-                },
-                {
-                    $Type             : 'Common.ValueListParameterDisplayOnly',
-                    ValueListProperty : 'code'
-                },
-                {
-                    $Type             : 'Common.ValueListParameterDisplayOnly',
-                    ValueListProperty : 'description'
-                },
-            ]
-        }
-    )
-};*/
 annotate MarketDB.Purchase.Unique_PID with {
     product_id @(
         Common.Text: product_id.description,
