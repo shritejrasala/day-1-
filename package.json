@@ -1,0 +1,41 @@
+{
+  "name": "SAPBTP",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^7",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1",
+    "@sap/ux-specification": "^1.120.4"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-product": "cds watch --open product/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-busiess_partner": "cds watch --open busiess_partner/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-bussiness_partner": "cds watch --open bussiness_partner/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "cds": {
+    "fiori": {
+      "lean_draft": true,
+      "bypass_draft": true
+    },
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "credentials": {
+          "url": "db.sqlite"
+        }
+      }
+    }
+  },
+  "sapux": [
+    "app/product",
+    "app/busiess_partner",
+    "app/bussiness_partner"
+  ]
+}
